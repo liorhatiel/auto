@@ -1,0 +1,121 @@
+:root {
+  --deloitte-green: #86bc25;
+  --deloitte-black: #000000;
+  --deloitte-gray: #e0e0e0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  color: var(--deloitte-black);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#searchContainer {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid var(--deloitte-gray);
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: var(--deloitte-green);
+}
+
+#autocompleteList {
+  width: 100%;
+  background-color: white;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid var(--deloitte-gray);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.autocomplete-item:hover {
+  background-color: var(--deloitte-gray);
+}
+
+#searchButton {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: var(--deloitte-green);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+  background-color: #6ea120;
+}
+
+#results {
+  margin-top: 30px;
+}
+
+.result-item {
+  background-color: white;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.result-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.result-info {
+  flex-grow: 1;
+}
+
+.result-info h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.result-info p {
+  margin: 0;
+  color: #666;
+}
