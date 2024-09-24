@@ -5,62 +5,15 @@ const autocompleteList = document.getElementById("autocompleteList");
 const searchButton = document.getElementById("searchButton");
 const resultsContainer = document.getElementById("results");
 
-// Dummy data (replace with your API call)
-const employees = [
-  {
-    ImageUrl: "https://example.com/image1.jpg",
-    WorkTitle: "Software Engineer",
-    Name: "John Doe",
-  },
-  {
-    ImageUrl: "https://example.com/image2.jpg",
-    WorkTitle: "Data Scientist",
-    Name: "Jane Smith",
-  },
-  {
-    ImageUrl: "https://example.com/image3.jpg",
-    WorkTitle: "Project Manager",
-    Name: "Alice Johnson",
-  },
-  {
-    ImageUrl: "https://example.com/image4.jpg",
-    WorkTitle: "UX Designer",
-    Name: "Bob Brown",
-  },
-  {
-    ImageUrl: "https://example.com/image5.jpg",
-    WorkTitle: "Front End Developer",
-    Name: "Boby Kane",
-  },
-  {
-    ImageUrl: "https://example.com/image5.jpg",
-    WorkTitle: "Front End Developer",
-    Name: "Boby Kane",
-  },
-  {
-    ImageUrl: "https://example.com/image5.jpg",
-    WorkTitle: "Front End Developer",
-    Name: "Boby Kane",
-  },
-  {
-    ImageUrl: "https://example.com/image5.jpg",
-    WorkTitle: "Front End Developer",
-    Name: "Boby Kane",
-  },
-  {
-    ImageUrl: "https://example.com/image5.jpg",
-    WorkTitle: "Front End Developer",
-    Name: "Boby Kane",
-  },
-];
-
-// Function to fetch data (replace with actual API call)
+// Function to fetch employee data from the server based on the search query
 async function fetchEmployeeData(query) {
-  return employees.filter(
-    (emp) =>
-      emp.Name.toLowerCase().includes(query.toLowerCase()) ||
-      emp.WorkTitle.toLowerCase().includes(query.toLowerCase())
+  const response = await fetch(
+    `http://localhost:3000/api/employees?q=${query}`
   );
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
+  return await response.json();
 }
 
 // Autocomplete functionality
@@ -78,8 +31,8 @@ searchInput.addEventListener("input", async function () {
 
 // Function to bold matched characters
 function boldMatch(text, query) {
-  const regex = new RegExp(`(${query})`, "gi"); // Case-insensitive match
-  return text.replace(regex, "<strong>$1</strong>"); // Wrap matched part with <strong> tags
+  const regex = new RegExp(`(${query})`, "gi");
+  return text.replace(regex, "<strong>$1</strong>");
 }
 
 // Function to display autocomplete suggestions
@@ -104,7 +57,7 @@ function displayAutocomplete(suggestions, query) {
     `;
 
     item.addEventListener("click", function () {
-      searchInput.value = emp.Name; // Set input to the selected name
+      searchInput.value = emp.Name;
       autocompleteList.innerHTML = "";
       autocompleteList.style.display = "none";
     });
@@ -125,7 +78,7 @@ searchButton.addEventListener("click", async function () {
 // Prevent form submission on Enter key press
 searchInput.addEventListener("keypress", async function (event) {
   if (event.key === "Enter") {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault();
     const query = searchInput.value;
     const results = await fetchEmployeeData(query);
     displayResults(results);
@@ -133,10 +86,12 @@ searchInput.addEventListener("keypress", async function (event) {
 });
 
 // Hide autocomplete list when input loses focus
-// searchInput.addEventListener("blur", () => {
-//   autocompleteList.innerHTML = "";
-//   autocompleteList.style.display = "none";
-// });
+searchInput.addEventListener("blur", () => {
+  setTimeout(() => {
+    autocompleteList.innerHTML = "";
+    autocompleteList.style.display = "none";
+  }, 200);
+});
 
 // Function to display search results
 function displayResults(results) {
