@@ -6,7 +6,6 @@ This project is a simple employee search application with autocomplete functiona
 
 - Real-time search with autocomplete suggestions
 - Display of employee details including name, job title, and profile picture
-- Responsive design for various screen sizes
 - Server-side filtering of employee data
 
 ## Project Structure
