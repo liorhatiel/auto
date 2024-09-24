@@ -16,8 +16,9 @@ This project implements a custom autocomplete component using vanilla JavaScript
 - **CSS**: Styling to enhance user experience.
 - **JavaScript**: Core functionality and data handling.
 
-## Getting Started
-
-1. Clone the repository:
+## Running the Server
+1. Open the server.js file in your code editor. (You can find it in the server folder).
+2. Run the following command to start the server:
    ```bash
-   git clone https://github.com/liorhatiel/auto.git
+   node server.js
+3. Open your browser and go to http://localhost:3000 to see the application in action.
