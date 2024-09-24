@@ -28,8 +28,8 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/employee-search-app.git
-   cd employee-search-app
+   https://github.com/liorhatiel/auto
+   cd auto
    ```
 
 2. Install the necessary dependencies:
