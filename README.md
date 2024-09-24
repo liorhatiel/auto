@@ -70,14 +70,4 @@ The server provides one API endpoint:
 - Node.js
 - Express.js
 
-## Contributing
 
-Contributions to this project are welcome. Please fork the repository and create a pull request with your changes.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Contact
-
-If you have any questions or feedback, please contact [Your Name] at [your.email@example.com].
