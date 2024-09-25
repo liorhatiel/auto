@@ -69,4 +69,16 @@ The server provides one API endpoint:
 - Node.js
 - Express.js
 
+## Employee List
+
+- John Thompson
+- Jane Smith
+- Alice Johnson
+- Bob Brown
+- Boby Kane
+- Boby Moby
+- Sophia Patel
+- Liam Carter
+- William Anderson
+- Emma Rodriguez
 
