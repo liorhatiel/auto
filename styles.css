@@ -28,8 +28,13 @@ h1 {
   margin-top: 20px;
 }
 
+.container {
+  margin: 0 auto;
+}
+
 #searchContainer {
-  margin-bottom: 20px;
+  display: flex;
+  position: relative;
 }
 
 #searchInput {
@@ -70,6 +75,7 @@ h1 {
 #searchButton {
   display: block;
   width: 100%;
+  margin-top: 20px;
   padding: 12px;
   font-size: 16px;
   background-color: var(--deloitte-green);
